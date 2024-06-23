@@ -10,8 +10,6 @@ const Calculator = () => {
 
   const calculate = () => {
     try {
-      // Use Function constructor instead of eval for better security
-      // and explicitly parse input to handle leading zeros correctly
       const result = new Function('return ' + data)();
       setData(result.toString());
     } catch (error) {
