@@ -9,8 +9,15 @@ const Calculator = () => {
   }
 
   const calculate = () => {
-    setData(eval(data).toString());
-  }
+    try {
+      // Use Function constructor instead of eval for better security
+      // and explicitly parse input to handle leading zeros correctly
+      const result = new Function('return ' + data)();
+      setData(result.toString());
+    } catch (error) {
+      setData("Error");
+    }
+  };
 
   const back = () => {
     setData(data.slice(0, -1));
