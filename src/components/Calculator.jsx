@@ -31,10 +31,10 @@ const Calculator = () => {
         <input placeholder="0" value={data}/>
       </div>
       <br />
-<button onClick={getValue} value="(">(</button>
+      <button onClick={getValue} value="(">(</button>
       <button onClick={getValue} value=")">)</button>
       <button onClick={getValue} value="%">%</button>
-      <button onClick={clear} >AC</button>
+      <button onClick={getValue} value="."  >.</button>
 
       <button onClick={getValue} value="7">7</button>
       <button onClick={getValue} value="8">8</button>
@@ -55,6 +55,7 @@ const Calculator = () => {
       <button onClick={back} >Back</button>
       <button onClick={calculate} value="=">=</button>
       <button onClick={getValue} value="/">/</button>
+      <button id="acbtn" onClick={clear}>AC</button>
     </div>
   );
 };
